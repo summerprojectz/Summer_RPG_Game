@@ -5,10 +5,15 @@ using UnityEngine;
 public abstract class BaseCharacter : MonoBehaviour
 {
     #region Fields
-    Dictionary<string, int> _characteristics;
+    Dictionary<string, int> _characteristics = new Dictionary<string, int>();
     #endregion
 
     #region Properties
+    public Dictionary<string, int> Characteristics
+    {
+        get { return _characteristics; }
+        set { _characteristics = value; }
+    }
     #endregion
 
     #region Methods
@@ -23,7 +28,6 @@ public abstract class BaseCharacter : MonoBehaviour
         _characteristics.Add("Perception", 1);
         _characteristics.Add("WillPower", 1);
         _characteristics.Add("Fellowship", 1);
-
     }
     #endregion
 }
